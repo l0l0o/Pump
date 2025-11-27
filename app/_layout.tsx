@@ -1,3 +1,4 @@
+import { UserProvider } from "@/context/userContext";
 import { useFonts } from "expo-font";
 import { Tabs } from "expo-router";
 
@@ -14,21 +15,27 @@ export default function RootLayout() {
   if (!loaded) return null;
 
   return (
-    <Tabs>
-      <Tabs.Screen
-        name="index"
-        options={{
-          headerTitle: "Home",
+    <UserProvider>
+      <Tabs
+        screenOptions={{
           headerShown: false,
         }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          headerTitle: "Explore",
-          headerShown: true,
-        }}
-      />
-    </Tabs>
+      >
+        <Tabs.Screen
+          name="index"
+          options={{
+            headerTitle: "Home",
+            headerShown: false,
+          }}
+        />
+        <Tabs.Screen
+          name="explore"
+          options={{
+            headerTitle: "Explore",
+            headerShown: false,
+          }}
+        />
+      </Tabs>
+    </UserProvider>
   );
 }

@@ -5,15 +5,15 @@ import { SPACING } from "@/style/SPACING";
 import { Text, View } from "react-native";
 
 const StreakIndicator = ({
-  user_consecutive_streak,
+  userConsecutiveStreak,
 }: {
-  user_consecutive_streak: number;
+  userConsecutiveStreak: number;
 }) => {
   const streakColor = () => {
-    if (user_consecutive_streak >= 15) return COLORS.streak3Background;
-    if (user_consecutive_streak >= 7) return COLORS.streak2Background;
-    if (user_consecutive_streak >= 3) return COLORS.streak1Background;
-    if (user_consecutive_streak >= 1) return COLORS.streak0Background;
+    if (userConsecutiveStreak >= 15) return COLORS.streak3Background;
+    if (userConsecutiveStreak >= 7) return COLORS.streak2Background;
+    if (userConsecutiveStreak >= 3) return COLORS.streak1Background;
+    if (userConsecutiveStreak >= 1) return COLORS.streak0Background;
     return COLORS.streakLessBackground;
   };
 
@@ -35,8 +35,10 @@ const StreakIndicator = ({
           fontSize: FONT.size.sm,
         }}
       >
-        {user_consecutive_streak}{" "}
-        {user_consecutive_streak > 1 ? "séances" : "séance"} consécutives
+        {userConsecutiveStreak}{" "}
+        {userConsecutiveStreak > 1
+          ? "séances consécutives"
+          : "séance consécutive"}
       </Text>
     </View>
   );

@@ -1,20 +1,37 @@
 import { BORDER_RADIUS } from "@/style/BORDER_RADIUS";
 import { COLORS } from "@/style/COLORS";
 import { SPACING } from "@/style/SPACING";
-import { View } from "react-native";
+import { DimensionValue, View, ViewProps, ViewStyle } from "react-native";
 
-const Container = ({ children }: { children: React.ReactNode }) => {
+type Props = {
+  children: React.ReactNode;
+  width?: DimensionValue;
+  height?: DimensionValue;
+  style?: ViewStyle;
+} & ViewProps;
+
+const Container = ({
+  children,
+  width = "100%",
+  height,
+  style,
+  ...props
+}: Props) => {
   return (
     <View
-      style={{
-        width: "100%",
-        padding: SPACING.sm,
-        borderColor: COLORS.greyLightest,
-        borderWidth: 1,
-        borderRadius: BORDER_RADIUS.md,
-        backgroundColor: COLORS.white,
-        marginTop: SPACING.md,
-      }}
+      style={[
+        {
+          width: width,
+          height: height,
+          padding: SPACING.sm,
+          borderColor: COLORS.greyLightest,
+          borderWidth: 1,
+          borderRadius: BORDER_RADIUS.md,
+          backgroundColor: COLORS.white,
+        },
+        style,
+      ]}
+      {...props}
     >
       {children}
     </View>

@@ -1,6 +1,8 @@
 import { UserProvider } from "@/context/userContext";
 import { useFonts } from "expo-font";
 import { Tabs } from "expo-router";
+import { StatusBar } from "expo-status-bar";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function RootLayout() {
   const [loaded] = useFonts({
@@ -16,26 +18,29 @@ export default function RootLayout() {
 
   return (
     <UserProvider>
-      <Tabs
-        screenOptions={{
-          headerShown: false,
-        }}
-      >
-        <Tabs.Screen
-          name="index"
-          options={{
-            headerTitle: "Home",
+      <SafeAreaView style={{ flex: 1 }}>
+        <StatusBar style="dark" />
+        <Tabs
+          screenOptions={{
             headerShown: false,
           }}
-        />
-        <Tabs.Screen
-          name="explore"
-          options={{
-            headerTitle: "Explore",
-            headerShown: false,
-          }}
-        />
-      </Tabs>
+        >
+          <Tabs.Screen
+            name="home/index"
+            options={{
+              headerTitle: "Home",
+              headerShown: false,
+            }}
+          />
+          <Tabs.Screen
+            name="seances/seances"
+            options={{
+              headerTitle: "Explore",
+              headerShown: false,
+            }}
+          />
+        </Tabs>
+      </SafeAreaView>
     </UserProvider>
   );
 }

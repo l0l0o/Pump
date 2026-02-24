@@ -1,0 +1,37 @@
+[
+  {
+    "seance_id": 1,
+    "user_id": 1,
+    "titre": "Morning Run",
+    "jours": ["Lundi", "Mercredi", "Vendredi"],
+    "heures": ["07:00"]
+  },
+  {
+    "seance_id": 2,
+    "user_id": 1,
+    "titre": "Yoga Session",
+    "jours": ["Mardi", "Jeudi"],
+    "heures": ["18:30"]
+  },
+  {
+    "seance_id": 3,
+    "user_id": 1,
+    "titre": "Strength Training",
+    "jours": ["Lundi", "Jeudi"],
+    "heures": ["17:00"]
+  },
+  {
+    "seance_id": 4,
+    "user_id": 1,
+    "titre": "Swimming",
+    "jours": ["Samedi"],
+    "heures": ["10:00"]
+  },
+  {
+    "seance_id": 5,
+    "user_id": 1,
+    "titre": "Cycling",
+    "jours": ["Dimanche"],
+    "heures": ["09:00"]
+  }
+]

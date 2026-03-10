@@ -4,7 +4,7 @@ import { SPACING } from "@/style/SPACING";
 import { Text, View } from "react-native";
 
 import Container from "@/components/ui/Container";
-import StreakIndicator from "@/features/level-indicator/modules/StreakIndicator";
+import StreakIndicator from "@/features/level-indicator/components/StreakIndicator";
 
 type LevelIndicatorProps = {
   username: string;

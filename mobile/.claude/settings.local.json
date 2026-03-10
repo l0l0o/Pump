@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(tree:*)",
+      "mcp__plugin_figma_figma__get_metadata",
+      "mcp__plugin_figma_figma__get_screenshot",
+      "Bash(start \"http://localhost:8765/wireframes.html#figmacapture=5851bd23-ac08-4f91-a3ea-6bd080778207&figmaendpoint=https%3A%2F%2Fmcp.figma.com%2Fmcp%2Fcapture%2F5851bd23-ac08-4f91-a3ea-6bd080778207%2Fsubmit&figmadelay=1000\")",
+      "mcp__plugin_figma_figma__generate_figma_design",
+      "Bash(gh auth:*)",
+      "Bash(gh label:*)"
+    ]
+  }
+}

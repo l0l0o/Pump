@@ -7,9 +7,9 @@ import { SPACING } from "@/style/SPACING";
 import { useEffect, useState } from "react";
 import { Text, View } from "react-native";
 import { getCurrentDate } from "./hook/getTime";
-import AddExerciseButton from "./modules/AddExerciseButton";
-import DayList from "./modules/DayList";
-import SeanceCard from "./modules/SeanceCard";
+import AddExerciseButton from "./components/AddExerciseButton";
+import DayList from "./components/DayList";
+import SeanceCard from "./components/SeanceCard";
 
 const Planner = ({ seances }: { seances: Seance[] }) => {
   const [currentTime, setCurrentTime] = useState(getCurrentDate());

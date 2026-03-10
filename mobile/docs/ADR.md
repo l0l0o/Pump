@@ -180,8 +180,9 @@ interface UserContextType {
 features/
 └── [feature-name]/
     ├── [Feature].tsx          # Composant principal
-    ├── hook/                  # Hooks spécifiques
-    └── modules/               # Sous-composants
+    ├── components/            # Sous-composants
+    ├── hooks/                 # Hooks spécifiques
+    └── data/                  # Mock data (fake[Model].json)
 ```
 
 **Conséquences:**
@@ -269,6 +270,43 @@ assets/images/
 - (+) Props personnalisables (fill, size)
 - (+) Pas de dépendance à une bibliothèque d'icônes
 - (-) Plus de fichiers à maintenir
+
+---
+
+### ADR-008: Stratégie de Test par Vertical Slice
+
+**Décision:** Chaque vertical slice doit être développée avec des mock data et couverte par des tests e2e avant tout push.
+
+**Contexte:** Garantir le bon fonctionnement de chaque fonctionnalité de manière isolée, indépendamment du backend, et détecter les régressions tôt.
+
+**Règles obligatoires:**
+
+1. **Mock data** — chaque feature expose des données fictives réalistes dans `[feature]/data/fake[Model].json` permettant de développer et tester sans backend
+2. **Tests e2e** — chaque slice dispose de tests e2e (Maestro) couvrant les flux critiques avant tout `git push`
+
+**Structure attendue par feature:**
+```
+features/
+└── [feature-name]/
+    ├── [Feature].tsx
+    ├── components/
+    ├── hooks/
+    ├── data/
+    │   └── fake[Model].json    ← mock data obligatoire
+    └── __tests__/
+        └── [feature].e2e.yaml  ← test Maestro obligatoire
+```
+
+**Outils:**
+- Mock data : fichiers JSON statiques
+- Tests e2e mobile : [Maestro](https://maestro.mobile.dev/)
+- Tests unitaires : Jest + React Native Testing Library
+
+**Conséquences:**
+- (+) Développement découplé du backend
+- (+) Détection des régressions avant merge
+- (+) Documentation vivante du comportement attendu
+- (-) Overhead initial pour chaque nouvelle feature
 
 ---
 
@@ -361,7 +399,8 @@ app/
 
 ### À Moyen Terme
 
-- [ ] Ajouter une couche de tests (Jest + React Native Testing Library)
+- [ ] Ajouter les tests unitaires manquants (Jest + React Native Testing Library)
+- [ ] Ajouter les tests e2e Maestro pour les features existantes
 - [ ] Implémenter l'authentification utilisateur
 - [ ] Ajouter les notifications push pour les rappels
 

@@ -1,4 +1,6 @@
 import { UserProvider } from "@/context/userContext";
+import { COLORS } from "@/style/COLORS";
+import { FONT } from "@/style/FONT";
 import { useFonts } from "expo-font";
 import { Tabs } from "expo-router";
 import { StatusBar } from "expo-status-bar";
@@ -23,20 +25,35 @@ export default function RootLayout() {
         <Tabs
           screenOptions={{
             headerShown: false,
+            tabBarActiveTintColor: COLORS.main,
+            tabBarInactiveTintColor: COLORS.greyLighter,
+            tabBarStyle: {
+              borderTopColor: COLORS.greyLightest,
+            },
+            tabBarLabelStyle: {
+              fontFamily: FONT.family.regular,
+              fontSize: FONT.size.xs,
+            },
           }}
         >
           <Tabs.Screen
             name="home/index"
             options={{
-              headerTitle: "Home",
               headerShown: false,
+              tabBarLabel: "Accueil",
             }}
           />
           <Tabs.Screen
-            name="seances/seances"
+            name="exercices/index"
             options={{
-              headerTitle: "Explore",
+              href: null,
+            }}
+          />
+          <Tabs.Screen
+            name="seances/index"
+            options={{
               headerShown: false,
+              tabBarLabel: "Séances",
             }}
           />
         </Tabs>

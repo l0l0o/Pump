@@ -1,4 +1,4 @@
-import ChevronIcon from "@/assets/images/common/ChevronIcon";
+import ChevronIcon from "@/assets/icons/common/ChevronIcon";
 import { COLORS } from "@/style/COLORS";
 import { Pressable } from "react-native";
 

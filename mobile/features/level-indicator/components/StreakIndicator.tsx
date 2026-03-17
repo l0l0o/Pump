@@ -1,4 +1,4 @@
-import StreakIcon from "@/assets/images/streak/streak";
+import StreakIcon from "@/assets/icons/streak/streak";
 import { COLORS } from "@/style/COLORS";
 import { FONT } from "@/style/FONT";
 import { SPACING } from "@/style/SPACING";

@@ -5,16 +5,24 @@ import { Text, View } from "react-native";
 
 import Container from "@/components/ui/Container";
 import StreakIndicator from "@/features/level-indicator/components/StreakIndicator";
+import { useAsync } from "@/shared/hooks/useAsync";
+import { FakeProgressionRepository } from "./infrastructure/FakeProgressionRepository";
+import { ApiProgressionRepository } from "./infrastructure/ApiProgressionRepository";
+import { IProgressionRepository } from "./domain/ports/IProgressionRepository";
+import { getProgression } from "./application/getProgression";
 
-type LevelIndicatorProps = {
-  username: string;
-  userConsecutiveStreak: number;
-};
+// TODO: remplacer par l'userId issu du contexte d'authentification
+const USER_ID = 1;
 
-const LevelIndicator = ({
-  username,
-  userConsecutiveStreak,
-}: LevelIndicatorProps) => {
+const repository: IProgressionRepository = __DEV__
+  ? new FakeProgressionRepository()
+  : new ApiProgressionRepository();
+
+const LevelIndicator = () => {
+  const { data: progression } = useAsync(() =>
+    getProgression(repository, USER_ID)
+  );
+
   return (
     <Container>
       <View style={{ gap: SPACING.xs, flexDirection: "column" }}>
@@ -39,10 +47,10 @@ const LevelIndicator = ({
                 color: COLORS.black,
               }}
             >
-              {username}
+              {progression?.username ?? ""}
             </Text>
             {/* Titre display */}
-            {/*               
+            {/*
                 {titre.length > 0 && (
                   <>
                     <Text
@@ -69,7 +77,7 @@ const LevelIndicator = ({
           </View>
 
           {/* Level display */}
-          {/* 
+          {/*
               <View>
                 <Text
                   style={{
@@ -82,10 +90,10 @@ const LevelIndicator = ({
                 </Text>
               </View>
             */}
-          <StreakIndicator userConsecutiveStreak={userConsecutiveStreak} />
+          <StreakIndicator userConsecutiveStreak={progression?.streak ?? 0} />
         </View>
         {/* Experience Bar */}
-        {/*           
+        {/*
             <ExperienceBar
               experience={experience}
               maxExperience={maxExperience}

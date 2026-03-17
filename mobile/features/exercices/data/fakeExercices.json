@@ -1,0 +1,69 @@
+[
+  {
+    "id": 1,
+    "nom": "Développé couché",
+    "groupeMusculaire": "pectoraux",
+    "format": "repetitions",
+    "description": "Exercice de base pour les pectoraux à la barre ou aux haltères"
+  },
+  {
+    "id": 2,
+    "nom": "Squat",
+    "groupeMusculaire": "jambes",
+    "format": "repetitions",
+    "description": "Exercice fondamental pour les quadriceps, ischio-jambiers et fessiers"
+  },
+  {
+    "id": 3,
+    "nom": "Tractions",
+    "groupeMusculaire": "dos",
+    "format": "repetitions",
+    "description": "Exercice au poids du corps pour le grand dorsal"
+  },
+  {
+    "id": 4,
+    "nom": "Développé militaire",
+    "groupeMusculaire": "epaules",
+    "format": "repetitions",
+    "description": "Presse épaules debout ou assis"
+  },
+  {
+    "id": 5,
+    "nom": "Curl biceps",
+    "groupeMusculaire": "biceps",
+    "format": "repetitions"
+  },
+  {
+    "id": 6,
+    "nom": "Dips",
+    "groupeMusculaire": "triceps",
+    "format": "repetitions",
+    "description": "Exercice au poids du corps ciblant les triceps"
+  },
+  {
+    "id": 7,
+    "nom": "Gainage",
+    "groupeMusculaire": "abdominaux",
+    "format": "duree",
+    "description": "Maintien de la position planche"
+  },
+  {
+    "id": 8,
+    "nom": "Course à pied",
+    "groupeMusculaire": "cardio",
+    "format": "duree"
+  },
+  {
+    "id": 9,
+    "nom": "Soulevé de terre",
+    "groupeMusculaire": "dos",
+    "format": "repetitions",
+    "description": "Exercice polyarticulaire majeur pour le dos et les jambes"
+  },
+  {
+    "id": 10,
+    "nom": "Crunch",
+    "groupeMusculaire": "abdominaux",
+    "format": "repetitions"
+  }
+]

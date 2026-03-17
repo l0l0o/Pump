@@ -1,4 +1,4 @@
-import AddIcon from "@/assets/images/exercise/AddIcon";
+import AddIcon from "@/assets/icons/exercise/AddIcon";
 import { BORDER_RADIUS } from "@/style/BORDER_RADIUS";
 import { COLORS } from "@/style/COLORS";
 import { FONT } from "@/style/FONT";

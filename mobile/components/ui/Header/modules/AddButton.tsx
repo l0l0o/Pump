@@ -1,4 +1,4 @@
-import PlusIcon from "@/assets/images/common/PlusIcon";
+import PlusIcon from "@/assets/icons/common/PlusIcon";
 import { COLORS } from "@/style/COLORS";
 import { Pressable } from "react-native";
 

@@ -257,7 +257,7 @@ class User {
 
 **Organisation:**
 ```
-assets/images/
+assets/icons/
 ├── common/          # Icônes génériques (Chevron, Plus)
 ├── exercise/        # Icônes exercices
 ├── header/          # Icônes header

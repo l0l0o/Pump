@@ -39,9 +39,10 @@ Scopes : `planner` · `seances` · `auth` · `ui` · `shared` · `level` · `nav
 ## Workflow Git
 
 - `main` → stable / production
-- `develop` → intégration
-- `feat/xxx` → feature branches créées depuis `develop`
+- `develop` → branche de travail principale
+- Pas de feature branches — commits directs sur `develop`, puis push
 - Remote : https://github.com/l0l0o/Pump.git
+- **Ne jamais commiter automatiquement** — attendre une demande explicite de l'utilisateur
 
 ---
 

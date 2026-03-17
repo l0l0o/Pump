@@ -1,5 +1,5 @@
-import AddIcon from "@/assets/images/exercise/AddIcon";
-import SeanceIcon from "@/assets/images/header/SeanceIcon";
+import AddIcon from "@/assets/icons/exercise/AddIcon";
+import SeanceIcon from "@/assets/icons/header/SeanceIcon";
 import Header from "@/components/ui/Header/Header";
 import { COLORS } from "@/style/COLORS";
 import { FONT } from "@/style/FONT";

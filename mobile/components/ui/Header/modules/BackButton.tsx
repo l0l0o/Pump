@@ -2,9 +2,10 @@ import ChevronIcon from "@/assets/icons/common/ChevronIcon";
 import { COLORS } from "@/style/COLORS";
 import { Pressable } from "react-native";
 
-const BackButton = () => {
+const BackButton = ({ onPress }: { onPress?: () => void }) => {
   return (
     <Pressable
+      onPress={onPress}
       style={{
         justifyContent: "center",
         alignItems: "center",

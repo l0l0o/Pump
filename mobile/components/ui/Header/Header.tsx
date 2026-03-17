@@ -14,16 +14,20 @@ type Props = {
   tabInfo: TabInfo;
   toggleBackButton?: boolean;
   toggleAddButton?: boolean;
+  onBack?: () => void;
+  onAdd?: () => void;
 };
 
 const Header = ({
   tabInfo,
   toggleBackButton = true,
   toggleAddButton = true,
+  onBack,
+  onAdd,
 }: Props) => {
   return (
     <View style={{ flexDirection: "row", gap: SPACING.xxs, width: "100%" }}>
-      {toggleBackButton && <BackButton />}
+      {toggleBackButton && <BackButton onPress={onBack} />}
 
       <Container
         style={{
@@ -40,7 +44,7 @@ const Header = ({
           {tabInfo.label}
         </Text>
       </Container>
-      {toggleAddButton && <AddButton />}
+      {toggleAddButton && <AddButton onPress={onAdd} />}
     </View>
   );
 };

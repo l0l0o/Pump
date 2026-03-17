@@ -2,9 +2,10 @@ import PlusIcon from "@/assets/icons/common/PlusIcon";
 import { COLORS } from "@/style/COLORS";
 import { Pressable } from "react-native";
 
-const AddButton = () => {
+const AddButton = ({ onPress }: { onPress?: () => void }) => {
   return (
     <Pressable
+      onPress={onPress}
       style={{
         justifyContent: "center",
         alignItems: "center",
